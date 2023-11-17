@@ -85,7 +85,9 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
         }
         set {
             super.frame = newValue
-            
+
+            // HACK: comment out as it affects how scroll view adjusts content inset for soft keyboard.
+            /*
             self.scrollView.contentInset = UIEdgeInsets.zero;
             if #available(iOS 11, *) {
                 // Above iOS 11, adjust contentInset to compensate the adjustedContentInset so the sum will
@@ -96,6 +98,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
                                                                 bottom: -insetToAdjust.bottom, right: -insetToAdjust.right);
                 }
             }
+            */
         }
     }
     
