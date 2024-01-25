@@ -390,6 +390,10 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
             
             // debugging is always enabled for iOS,
             // there isn't any option to set about it such as on Android.
+
+            if #available(iOS 16.4, *) {
+                isInspectable = settings.isInspectable
+            }
             
             if options.clearCache {
                 clearCache()
@@ -1098,6 +1102,12 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
                 } catch {
                     print(error.localizedDescription)
                 }
+            }
+        }
+
+        if #available(iOS 16.4, *) {
+            if newOptionsMap["isInspectable"] != nil, options?.isInspectable != newOptions.isInspectable {
+                isInspectable = newOptions.isInspectable
             }
         }
         
