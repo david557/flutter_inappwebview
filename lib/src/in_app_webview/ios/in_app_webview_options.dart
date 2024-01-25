@@ -227,7 +227,7 @@ class IOSInAppWebViewOptions
   ///The default value is `false`.
   bool disableInputAccessoryView;
 
-  bool inspectable; // HACK
+  bool isInspectable; // HACK
 
   IOSInAppWebViewOptions(
       {this.disallowOverScroll = false,
@@ -263,7 +263,7 @@ class IOSInAppWebViewOptions
       this.allowingReadAccessTo,
       this.disableLongPressContextMenuOnLinks = false,
       this.disableInputAccessoryView = false,
-      this.inspectable = false, // HACK
+      this.isInspectable = false, // HACK
     }) {
     assert(
         allowingReadAccessTo == null || allowingReadAccessTo!.isScheme("file"));
@@ -313,7 +313,7 @@ class IOSInAppWebViewOptions
       "allowingReadAccessTo": allowingReadAccessTo.toString(),
       "disableLongPressContextMenuOnLinks": disableLongPressContextMenuOnLinks,
       "disableInputAccessoryView": disableInputAccessoryView,
-      "inspectable": inspectable, // HACK
+      "isInspectable": isInspectable, // HACK
     };
   }
 
@@ -377,7 +377,7 @@ class IOSInAppWebViewOptions
     options.disableLongPressContextMenuOnLinks =
         map["disableLongPressContextMenuOnLinks"];
     options.disableInputAccessoryView = map["disableInputAccessoryView"];
-    options.inspectable = map["inspectable"];
+    options.isInspectable = map["isInspectable"];
     return options;
   }
 
