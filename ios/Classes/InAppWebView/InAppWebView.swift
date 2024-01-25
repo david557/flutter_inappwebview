@@ -392,7 +392,7 @@ public class InAppWebView: WKWebView, UIScrollViewDelegate, WKUIDelegate, WKNavi
             // there isn't any option to set about it such as on Android.
 
             if #available(iOS 16.4, *) {
-                isInspectable = settings.isInspectable
+                isInspectable = options.isInspectable
             }
             
             if options.clearCache {
