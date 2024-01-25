@@ -138,7 +138,7 @@ public class InAppWebViewOptions: Options<InAppWebView> {
 
             // HACK
             if #available(iOS 16.4, *) {
-                realSettings["isInspectable"] = webView.isInspectable
+                realOptions["isInspectable"] = webView.isInspectable
             }
         }
         return realOptions
