@@ -227,6 +227,8 @@ class IOSInAppWebViewOptions
   ///The default value is `false`.
   bool disableInputAccessoryView;
 
+  bool inspectable; // HACK
+
   IOSInAppWebViewOptions(
       {this.disallowOverScroll = false,
       this.enableViewportScale = false,
@@ -260,7 +262,9 @@ class IOSInAppWebViewOptions
       this.applePayAPIEnabled = false,
       this.allowingReadAccessTo,
       this.disableLongPressContextMenuOnLinks = false,
-      this.disableInputAccessoryView = false}) {
+      this.disableInputAccessoryView = false,
+      this.inspectable = false, // HACK
+    }) {
     assert(
         allowingReadAccessTo == null || allowingReadAccessTo!.isScheme("file"));
   }
@@ -309,6 +313,7 @@ class IOSInAppWebViewOptions
       "allowingReadAccessTo": allowingReadAccessTo.toString(),
       "disableLongPressContextMenuOnLinks": disableLongPressContextMenuOnLinks,
       "disableInputAccessoryView": disableInputAccessoryView,
+      "inspectable": inspectable, // HACK
     };
   }
 
@@ -372,6 +377,7 @@ class IOSInAppWebViewOptions
     options.disableLongPressContextMenuOnLinks =
         map["disableLongPressContextMenuOnLinks"];
     options.disableInputAccessoryView = map["disableInputAccessoryView"];
+    options.inspectable = map["inspectable"];
     return options;
   }
 
